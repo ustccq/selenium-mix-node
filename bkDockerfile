@@ -114,11 +114,3 @@ RUN CD_VERSION=$(if [ ${CHROME_DRIVER_VERSION:-latest} = "latest" ]; then echo $
   && mv /opt/selenium/chromedriver /opt/selenium/chromedriver-$CD_VERSION \
   && chmod 755 /opt/selenium/chromedriver-$CD_VERSION \
   && sudo ln -fs /opt/selenium/chromedriver-$CD_VERSION /usr/bin/chromedriver
-
-#==============================
-# Scripts to run Selenium Node
-#==============================
-COPY entry_point.sh \
-    /opt/bin/
-	
-CMD ["/opt/bin/entry_point.sh"]
