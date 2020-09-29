@@ -120,5 +120,7 @@ RUN CD_VERSION=$(if [ ${CHROME_DRIVER_VERSION:-latest} = "latest" ]; then echo $
 #==============================
 COPY entry_point.sh \
     /opt/bin/
+    
+RUN chmod 755 /opt/bin/entry_point.sh
 	
 CMD ["/opt/bin/entry_point.sh"]
